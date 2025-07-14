@@ -47,6 +47,7 @@
           postInstall = ''
             wrapProgram $out/bin/claude-squad \
               --prefix PATH : ${pkgs.lib.makeBinPath [ pkgs.tmux pkgs.gh ]}
+            ln -s $out/bin/claude-squad $out/bin/cs
           '';
 
           meta = with pkgs.lib; {
